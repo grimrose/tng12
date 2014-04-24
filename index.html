@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Introduction of Nodyn</title>
+    <link rel="stylesheet" href="styles/styles.css"/>
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>Node.jsがJVMにやってきた</h1>
+        <h2>- Introduction of Nodyn -</h2>
+        <p>東京Node学園 12時限目 #thg12</p>
+        <p><a href="https://twitter.com/grimrose" target="_blank"> @grimrose</a></p>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <pre><code class="language-groovy">import groovy.json.*
+
+def json = new JsonBuilder()
+json {
+    自己紹介 {
+        "@grimrose" {
+            好きな言語 "Groovy"
+            好きなIDE "IntelliJ IDEA"
+            コミュニティ "Yokohama.groovy", "#yokohamagroovy"
+        }
+    }
+}
+println StringEscapeUtils.unescapeJava(json.toPrettyString())</code></pre><a href="http://groovyconsole.appspot.com/" target="_blank">groovyconsole.appspot.com</a>
+      </section>
+      <section>
+        <h3>東京Node学園祭2013</h3>
+        <p><a href="http://grimrose.blogspot.jp/2013/10/node2013-nodefest.html" target="_blank">東京Node学園祭2013 に参加してきました #nodefest</a></p>
+      </section>
+      <section><blockquote class="twitter-tweet" lang="ja"><p>Nodyn.io使ってたりJXCore試してみた、って人いたら教えてもらいたい <a href="https://t.co/LkxbDwGqpW">https://t.co/LkxbDwGqpW</a></p>&mdash; Yosuke FURUKAWA (@yosuke_furukawa) <a href="https://twitter.com/yosuke_furukawa/statuses/440807889708400640">2014, 3月 4</a></blockquote></section>
+      <section>
+        <h2 class="bullet">話すこと</h2>
+        <ul>
+          <li>Nodyn</li>
+          <li>Vert.x</li>
+          <li>Netty</li>
+          <li>Node.js API</li>
+          <li>Demo</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Nodynって何?</h2>
+      </section>
+      <section>
+        <h2>Nodyn</h2>
+        <p>is a node.js compatible framework, running on the JVM powered by the DynJS Javascript runtime running under vert.x</p>
+        <p><a href="http://nodyn.io" target="_blank">nodyn.io</a></p>
+      </section>
+      <section>
+        <h2>Nodyn</h2>
+        <p>
+          <blockquote>Imagine running your Node.js app on the JVM with clean, clear access to Java directly in your Javascript. All that with vert.x's powerful clustering technology built right in.</blockquote>
+        </p>
+        <p><a href="http://nodyn.io" target="_blank">nodyn.io</a></p>
+      </section>
+      <section>
+        <h2>Nodyn</h2>
+        <p>DynJS</p>
+        <P>+</P>
+        <p>lang-dynjs</p>
+        <p>+</p>
+        <p>Vert.x</p>
+      </section>
+      <section>
+        <h2>DynJS</h2>
+        <p>is an ECMAScript runtime for the JVM.</p>
+        <p><a href="http://dynjs.org" target="_blank">dynjs.org</a></p>
+      </section>
+      <section>
+        <h2>Vert.xって何?</h2>
+      </section>
+      <section>
+        <h2>Vert.x</h2>
+        <p>is a lightweight, high performance application platform for the JVM that's designed for modern mobile, web, and enterprise applications.</p>
+        <p><a href="http://vertx.io" target="_blank">vertx.io</a></p>
+      </section>
+      <section>
+        <h2>Vert.x がいいね！</h2>
+        <h3>（第1回：入門する）</h3>
+        <p><a href="http://acro-engineer.hatenablog.com/entry/2013/08/10/131203" target="_blank">http://acro-engineer.hatenablog.com/entry/2013/08/10/131203</a></p>
+        <p>written by<a href="https://twitter.com/muraken720" target="_blank">@muraken720</a></p>
+      </section>
+      <section><iframe src="http://www.slideshare.net/slideshow/embed_code/28096272" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/acroquest/an-introduction-to-vertx" title="An Introduction to Vert.x" target="_blank">An Introduction to Vert.x</a> </strong> from <strong><a href="http://www.slideshare.net/acroquest" target="_blank">Acroquest Technology</a></strong> </div></section>
+      <section>
+        <h2>Nettyって何?</h2>
+      </section>
+      <section>
+        <h2>Netty</h2>
+        <p>is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients.</p>
+        <p><a href="http://netty.io/index.html" target="_blank">netty.io</a></p>
+      </section>
+      <section>
+        <h2 class="bullet">Netty</h2>
+        <p><a href="http://twitter.github.io/finagle/" target="_blank">Finagle</a></p>
+        <p><a href="http://www.playframework.com" target="_blank">Play Framework</a></p>
+        <p><a href="http://vertx.io" target="_blank">Vert.x</a></p>
+        <p>etc...</p>
+      </section>
+      <section>
+        <h2>Nettyの基本</h2>
+        <p><a href="http://d.hatena.ne.jp/fatrow/20110208/netty" target="_blank">http://d.hatena.ne.jp/fatrow/20110208/netty</a></p>
+      </section>
+      <section><iframe src="http://www.slideshare.net/slideshow/embed_code/10596642" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/ts7i/learning-netty" title="Netty 入門 - 「Netty ベース」の何かに着手する前に" target="_blank">Netty 入門 - 「Netty ベース」の何かに着手する前に</a> </strong> from <strong><a href="http://www.slideshare.net/ts7i" target="_blank">Takuma SHIRAISHI</a></strong> </div></section>
+      <section><iframe src="http://www.slideshare.net/slideshow/embed_code/8788357" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/tanago3/netty" title="Nettyらへん" target="_blank">Nettyらへん</a> </strong> from <strong><a href="http://www.slideshare.net/tanago3" target="_blank">Go Tanaka</a></strong> </div></section>
+      <section>
+        <h2>Reactive Streams</h2>
+        <p><a href="http://www.reactive-streams.org" target="_blank">www.reactive-streams.org</a></p>
+      </section>
+      <section>
+        <h2>詳しくは</h2>
+        <h3>非同期ストリーム処理の標準化を目指す "Reactive Streams" とは</h3>
+        <p><a href="http://okapies.hateblo.jp/entry/2014/04/20/212821">http://okapies.hateblo.jp/entry/2014/04/20/212821</a></p>
+      </section>
+      <section>
+        <h2>Vert.x</h2>
+        <h2>と</h2>
+        <h2>JavaScript</h2>
+      </section>
+      <section>
+        <h2>…その前に</h2>
+      </section>
+      <section>
+        <h2>JavaとJavaScript</h2>
+        <p><a href="https://www.google.co.jp/search?q=java+javascript+違い&amp;oe=UTF-8" target="_blank">java javascript 違い</a></p>
+      </section>
+      <section>
+        <h2>JavaScript on JVM</h2>
+        <p><a href="http://d.hatena.ne.jp/Nagise/20140227/1393500657" target="_blank">Java書けるんなら当然JavaScript呼び出せるよね？</a></p>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h3>Java書けるんなら当然JavaScript呼び出せるよね？</h3>
+        <pre><code class="language-java">import javax.script.*;
+
+public class Sample {
+    public static void main(String[] args) throws ScriptException {
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine engine = manager.getEngineByName("js");
+        engine.eval("println('Hello Script API');");
+    }
+}
+</code></pre>
+        <p><a href="http://d.hatena.ne.jp/Nagise/20140227/1393500657" target="_blank">http://d.hatena.ne.jp/Nagise/20140227/1393500657</a></p>
+      </section>
+      <section><iframe src="http://www.slideshare.net/slideshow/embed_code/32565546?rel=0&startSlide=115" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/OracleMiddleJP/new-feature-of-java-se-8" title="New Feature Of Java SE 8" target="_blank">New Feature Of Java SE 8</a> </strong> from <strong><a href="http://www.slideshare.net/OracleMiddleJP" target="_blank">Oracle Fusion Middleware</a></strong> </div></section>
+      <section>
+        <h2>JavaScript Runtime</h2>
+        <h2>for Vert.x</h2>
+        <h3>DynJS</h3>
+        <h3>Rhino (Java 6, 7)</h3>
+        <h3>Nashorn (Java 8 ~)</h3>
+      </section>
+      <section>
+        <h2>e.g. Web Server</h2>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h2>Node.js Web Server</h2>
+        <pre><code class="language-javascript">var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');</code></pre>
+        <p><a href="http://nodejs.org" target="_blank">http://nodejs.org</a></p>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h2>Vert.x Web Server</h2>
+        <pre><code class="language-javascript">var vertx = require('vertx');
+vertx.createHttpServer().requestHandler(function(req) {
+  req.response.headers['Content-Type'] = "text/plain";
+  req.response.statusCode(200).end("Hello World");
+}).listen(8080, 'localhost');
+</code></pre>
+        <p><a href="http://vertx.io/core_manual_js.html#writing-http-servers" target="_blank">http://vertx.io/core_manual_js.html#writing-http-servers</a></p>
+      </section>
+      <section>
+        <h2>Node.jsとどう違うの?</h2>
+      </section>
+      <section>
+        <h2><a href="http://nodyn.io/compatibility/" target="_blank">Node.js API Compatibility</a></h2>
+      </section>
+      <section>
+        <h3>Nodyn Completion of the Node.js API</h3>
+        <p>
+          <blockquote>Node.jsのpure JavaScriptのコードは、そのまま利用している</blockquote>
+        </p>
+        <p>
+          <blockquote>Cを使ったモジュールについては、Javaで書き直している</blockquote>
+        </p>
+        <p><a href="http://nodyn.io/compatibility/" target="_blank">http://nodyn.io/compatibility/</a></p>
+      </section>
+      <section>
+        <h3>Complete</h3>
+        <p>Assert</p>
+        <p>DNS</p>
+        <p>Events</p>
+        <p>Modules</p>
+        <p>Path</p>
+        <p>Punycode</p>
+        <p>Query Strings</p>
+        <p>STDIO</p>
+        <p>Stream</p>
+        <p>Timers</p>
+        <p>UDP/Datagram</p>
+        <p>URL</p>
+        <p>Utilities</p>
+      </section>
+      <section>
+        <h3>Complete but ...</h3>
+        <p>HTTP<a href="http://nodyn.io/api/http/" target="_blank">(詳細)</a></p>
+        <p>Net<a href="http://nodyn.io/api/net" target="_blank">(詳細)</a></p>
+        <p>Globals</p>
+      </section>
+      <section>
+        <h3>In progress</h3>
+        <p>Buffer<a href="http://nodyn.io/api/buffer" target="_blank">(詳細)</a></p>
+        <p>Crypto</p>
+        <p>File System</p>
+      </section>
+      <section>
+        <h3>Other</h3>
+        <p>C Addons</p>
+        <p>Child Processes</p>
+        <p>Cluster</p>
+        <p>Debugger</p>
+        <p>Domain</p>
+        <p>HTTPS</p>
+        <p>OS<a href="http://nodyn.io/api/os" target="_blank">(詳細)</a></p>
+        <p>Process</p>
+        <p>Readline</p>
+        <p>REPL</p>
+        <p>String Decoder</p>
+        <p>TLS/SSL</p>
+        <p>TTY</p>
+        <p>VM</p>
+        <p>ZLIB</p>
+      </section>
+      <section>
+        <h1>Demo</h1>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h2>demo_server.js</h2>
+        <pre><code class="language-javascript">var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+</code></pre>
+        <p><a href="http://nodejs.org" target="_blank">http://nodejs.org</a></p>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h2>node demo_server.js</h2>
+        <h2><a href="http://localhost:1337" target="_blank">Hello World</a></h2>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h2>langs.properties</h2>
+        <pre><code class="language-java">#// 一行で
+nodejs=org.projectodd~nodyn-verticle~0.1.1-SNAPSHOT\
+:org.projectodd.nodyn.NodeJSVerticleFactory
+#// .jsと.coffeeをnodynで使う
+.js=nodejs
+.coffee=nodejs
+</code></pre>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h2>vertx run demo_server.js</h2>
+        <h2><a href="http://localhost:1337" target="_blank">Hello NoDyn!</a></h2>
+      </section>
+      <section>
+        <h2>ご清聴</h2>
+        <h2>ありがとうございました。</h2>
+      </section>
+    </article>
+    <script src="scripts/scripts.js"></script>
+  </body>
+</html>
